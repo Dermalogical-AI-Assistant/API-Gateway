@@ -8,8 +8,7 @@ RUN gradle build --no-daemon -x test
 # Runtime stage
 FROM openjdk:17-slim
 RUN apt update && apt install jq curl -y && apt clean && rm -rf /var/lib/apt/lists/*
+EXPOSE 8082
 RUN mkdir /app
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/app.jar
-
-EXPOSE 8082
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
