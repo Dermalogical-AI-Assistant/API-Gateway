@@ -17,7 +17,13 @@ public class Configurations {
     @Order(Ordered.HIGHEST_PRECEDENCE)
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:5174"));
+        corsConfig.setAllowedOriginPatterns(Arrays.asList(
+                "http://localhost:5173",
+                "http://localhost:5174",
+                "https://tdcosmetics.netlify.app",
+                "https://tdcosmetics.beauty",
+                "https://www.tdcosmetics.beauty"
+        ));
         corsConfig.setMaxAge(3600L);
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfig.setAllowedHeaders(Arrays.asList("*"));
@@ -28,4 +34,5 @@ public class Configurations {
 
         return new CorsWebFilter(source);
     }
+
 }
