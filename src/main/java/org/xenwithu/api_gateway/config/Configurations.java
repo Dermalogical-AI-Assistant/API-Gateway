@@ -21,7 +21,9 @@ public class Configurations {
                 "http://localhost:5173",
                 "http://localhost:5174",
                 "https://tdcosmetics.netlify.app",
+                "https://tdcosmetic.netlify.app",
                 "https://tdcosmetics.beauty",
+                "http://tdcosmetics.beauty",
                 "https://www.tdcosmetics.beauty"
         ));
         corsConfig.setMaxAge(3600L);
